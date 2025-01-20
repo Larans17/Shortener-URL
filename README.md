@@ -13,7 +13,9 @@ A Django-based URL shortener application that allows users to create shortened U
 **Requirements**
 
 Python 3.9+
+
 Django 4.0+
+
 Django REST Framework (DRF)
 
 **Setup Instructions**
@@ -22,19 +24,24 @@ Django REST Framework (DRF)
   $ cd <repository-folder>
 
 2. Set Up a Virtual Environment
+   
    $ python -m venv venv
    $ source venv/bin/activate
 
-3. Install Dependencies
+4. Install Dependencies
+   
    $ pip install -r requirements.txt
 
-4. Apply Migrations
+5. Apply Migrations
+   
    $ python manage.py migrate
 
-5. Run the Development Server
+7. Run the Development Server
+   
    $ python manage.py runserver
 
 **API Endpoints**
+
 Endpoint: POST /post-shorten/
 
 payload:
@@ -43,6 +50,8 @@ payload:
   "expiry_hours": 24,        // Optional, defaults to 24 hours
   "password": "123"   // Optional
   }
+
+  
 Response:
   {
   "id": 1,
@@ -56,13 +65,16 @@ Response:
 **Redirect to Original URL**
 
 Endpoint: GET /<short_url>/
+
 Optional Query Parameter:
+
 password: If the shortened URL is password-protected.
 Response: Redirects to the original URL.
 
 **Analytics for a Shortened URL**
 
 Endpoint: GET /analytics/<short_url>/
+
 Response:
   [
   {
